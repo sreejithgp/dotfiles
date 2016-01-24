@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh installation.
-  export PATH="$PATH:$HOME/scripts" #Custom executables
   export ZSH=/home/sreejith/.oh-my-zsh
   export TERM="xterm-256color"
 # Set name of the theme to load.
@@ -65,6 +64,7 @@ plugins=(git rails ruby rvm vi_mode)
 # User configuration
 
   export PATH="/home/sreejith/.rvm/gems/ruby-2.2.1/bin:/home/sreejith/.rvm/gems/ruby-2.2.1@global/bin:/home/sreejith/.rvm/rubies/ruby-2.2.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin"
+  export PATH="$PATH:$HOME/scripts" #Custom executables
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

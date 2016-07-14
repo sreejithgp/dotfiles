@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/sreejith/.oh-my-zsh
   export TERM="xterm-256color"
+  export EDITOR='vim'
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -68,6 +69,7 @@ plugins=(git rails ruby rvm vi_mode)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source ~/.rvm/scripts/rvm
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

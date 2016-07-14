@@ -26,18 +26,48 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-surround'
 
-map <C-n> :NERDTreeToggle<CR>
+Plugin 'vim-scripts/Solarized'
 
-inoremap jk <ESC>
+Plugin 'MarcWeber/vim-addon-mw-utils'
+
+Plugin 'tomtom/tlib_vim'
+
+Plugin 'garbas/vim-snipmate'
+
+Plugin 'honza/vim-snippets'
+
+Plugin 'jiangmiao/auto-pairs'
+
+set background=dark
+
+colorscheme solarized
+
+map <C-n> :NERDTreeToggle<CR>
+noremap <C-h> :bp<CR>
+noremap <C-l> :bn<CR>
 
 let mapleader = "\<Space>"
+nnoremap <Leader>n :tabedit<CR>
+nnoremap <Leader>. :tabn<CR>
+nnoremap <Leader>, :tabp<CR>
+nnoremap <Leader>w :tabclose<CR>
+nnoremap <Leader>s :w<CR>
+nnoremap <Leader>q :q!<CR>
+inoremap jk <ESC>
+
+" copying to buffer
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+
 
 set hlsearch
 
 set laststatus=2
 
-set number
-
+set relativenumber
 set tabstop=2 shiftwidth=2 expandtab
 
 "disable arrow keys

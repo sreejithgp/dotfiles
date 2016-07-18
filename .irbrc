@@ -10,4 +10,12 @@ IRB.conf[:USE_TRACER] = false
 IRB.conf[:IGNORE_SIGINT] = true
 IRB.conf[:IGNORE_EOF] = false
 IRB.conf[:DEBUG_LEVEL]=0
-IRB.conf[:PROMPT_MODE] = :SIMPLE
+#IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:PROMPT_MODE] = :MY_PROMPT
+
+IRB.conf[:PROMPT][:MY_PROMPT] = { # name of prompt mode
+  :PROMPT_I => "",             # normal prompt
+  :PROMPT_S => "",             # prompt for continuing strings
+  :PROMPT_C => "  ",             # prompt for continuing statement
+  :RETURN => "#=>%s\n"        # format to return value
+}

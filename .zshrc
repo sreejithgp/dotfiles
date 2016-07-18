@@ -64,12 +64,11 @@ plugins=(git rails ruby rvm vi_mode)
 
 # User configuration
 
-  export PATH="/home/sreejith/.rvm/gems/ruby-2.2.1/bin:/home/sreejith/.rvm/gems/ruby-2.2.1@global/bin:/home/sreejith/.rvm/rubies/ruby-2.2.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin"
+  export PATH="/home/sreejith/.rvm/gems/ruby-1.9.3-p194/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin"
   export PATH="$PATH:$HOME/scripts" #Custom executables
 # export MANPATH="/usr/local/man:$MANPATH"
-
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 source $ZSH/oh-my-zsh.sh
-source ~/.rvm/scripts/rvm
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

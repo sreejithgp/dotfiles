@@ -38,7 +38,19 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'gioele/vim-autoswap'
+
+Plugin 'thoughtbot/vim-rspec'
+
+Plugin 'majutsushi/tagbar'
+
+Plugin 'christoomey/vim-tmux-navigator'
+
 set background=dark
+set hlsearch
+set laststatus=2
+set relativenumber
+set tabstop=2 shiftwidth=2 expandtab
 
 colorscheme solarized
 
@@ -47,6 +59,7 @@ noremap <C-h> :bp<CR>
 noremap <C-l> :bn<CR>
 
 let mapleader = "\<Space>"
+let g:autoswap_detect_tmux = 1
 nnoremap <Leader>n :tabedit<CR>
 nnoremap <Leader>. :tabn<CR>
 nnoremap <Leader>, :tabp<CR>
@@ -62,13 +75,16 @@ vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 
+" RSpec.vim mappings
+"
+nnoremap <Leader>z :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>y :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 
-set hlsearch
+"Ctags Toggle
 
-set laststatus=2
-
-set relativenumber
-set tabstop=2 shiftwidth=2 expandtab
+nnoremap <Leader>] :TagbarToggle<CR>
 
 "disable arrow keys
 

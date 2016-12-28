@@ -6,46 +6,33 @@ call vundle#rc()
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
 Plugin 'gmarik/vundle'
-
 " We could also add repositories with a ".git" extension
 Plugin 'scrooloose/nerdtree.git'
-
 Plugin 'scrooloose/syntastic'
-
 " To get plugins from Vim Scripts, you can reference the plugin
 " by name as it appears on the site
 Plugin 'Buffergator'
-
-Plugin 'itchyny/lightline.vim'
-
+"Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-
 Plugin 'vim-ruby/vim-ruby'
-
 Plugin 'kien/ctrlp.vim'
-
 Plugin 'tpope/vim-surround'
-
 Plugin 'vim-scripts/Solarized'
-
 Plugin 'MarcWeber/vim-addon-mw-utils'
-
 Plugin 'tomtom/tlib_vim'
-
 Plugin 'garbas/vim-snipmate'
-
 Plugin 'honza/vim-snippets'
-
 Plugin 'jiangmiao/auto-pairs'
-
 Plugin 'gioele/vim-autoswap'
-
 Plugin 'thoughtbot/vim-rspec'
-
 Plugin 'majutsushi/tagbar'
-
 Plugin 'christoomey/vim-tmux-navigator'
-
+Plugin 'elixir-lang/vim-elixir'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+set t_Co=256
 set background=dark
 set hlsearch
 set laststatus=2
@@ -75,23 +62,24 @@ vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 
+" Tmux window switch 
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>110<C-w>\|
+"nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>35<C-w>_
+"nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>35<C-w>_
+nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>110<C-w>\|
+
+
 " RSpec.vim mappings
 "
 nnoremap <Leader>z :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>y :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-
+nnoremap <leader>r :!ruby %<cr>
 "Ctags Toggle
 
 nnoremap <Leader>] :TagbarToggle<CR>
-
-"disable arrow keys
-
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on

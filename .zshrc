@@ -1,21 +1,29 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH="/usr/local/share/python/:$PATH"
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/sreejith/.oh-my-zsh
-  export TERM="xterm-256color"
-  export EDITOR='vim'
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+export ZSH=/Users/sreejithgp/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(rvm vcs)
-
 POWERLEVEL9K_RVM="echo \$(~/.rvm/bin/rvm-prompt)"
-POWERLEVEL9K_RVM_BACKGROUND="red"
-POWERLEVEL9K_RVM_FOREGROUND="yellow"
+POWERLEVEL9K_RVM_BACKGROUND="blue"
+POWERLEVEL9K_RVM_FOREGROUND="black"
+#
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+#POWERLEVEL9K_SHORTEN_DELIMITER=""
+#POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-
-#ZSH_THEME="robbyrussell"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -58,15 +66,15 @@ POWERLEVEL9K_RVM_FOREGROUND="yellow"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby rvm vi_mode)
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-  export PATH="/home/sreejith/.rvm/gems/ruby-1.9.3-p194/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin:/home/sreejith/.rvm/bin"
-  export PATH="$PATH:$HOME/scripts" #Custom executables
 # export MANPATH="/usr/local/man:$MANPATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -82,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -92,4 +100,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# xmessage -nearmouse -file ~/daily_learn
+alias vim="nvim"
+alias vi="nvim"
+alias hnl="hn --limit 40 --keep-open"
+alias "git log"="git log --graph --all"
+alias ctags="`brew --prefix`/bin/ctags"
+alias tensorflow="source ~/envs/tensorflow/bin/activate"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH=/usr/local/share/python:$PATH

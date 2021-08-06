@@ -36,6 +36,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'prettier/vim-prettier'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-repeat'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'junegunn/fzf.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+
+let g:python_host_prog = '/usr/local/bin/python2'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='dark'
 let g:jsx_ext_required = 0
@@ -50,7 +56,7 @@ set backspace=indent,eol,start
 set cursorline
 set cursorcolumn
 set textwidth=80
-set colorcolumn=+1
+let &colorcolumn="80,".join(range(120,999),",")
 set nosmarttab
 colorscheme solarized
 
@@ -109,3 +115,4 @@ nnoremap <Leader>d :Dash<CR>
 syntax on
 filetype plugin indent on
 let g:ale_fixers = {'javascript': ['eslint']}
+let g:notes_directories = ['~/Documents/Notes']

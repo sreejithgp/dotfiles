@@ -40,7 +40,9 @@ nnoremap <Leader>n :tabedit<CR>
 nnoremap <Leader>. :tabn<CR>
 nnoremap <Leader>, :tabp<CR>
 nnoremap <Leader>w :tabclose<CR>
-nnoremap <Leader>s :w!<CR>
+
+nnoremap <C-s> :update<CR>
+inoremap <C-s> <Esc>:update<CR>
 nnoremap <Leader>q :q!<CR>
 
 " copying to buffer

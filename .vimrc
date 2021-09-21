@@ -37,9 +37,13 @@ Plugin 'prettier/vim-prettier'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-repeat'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'junegunn/vim-peekaboo'
+Plugin 'vimwiki/vimwiki'
+Plugin 'michal-h21/vim-zettel'
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:airline_powerline_fonts = 1
@@ -60,6 +64,7 @@ let &colorcolumn="80,".join(range(120,999),",")
 set nosmarttab
 colorscheme solarized
 
+imap <M-BS> <C-w>
 noremap <C-h> :bp<CR>
 noremap <C-l> :bn<CR>
 noremap <C-p> :FZF<CR>

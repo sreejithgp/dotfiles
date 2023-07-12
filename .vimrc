@@ -12,13 +12,13 @@ Plugin 'gmarik/vundle'
 " by name as it appears on the site
 Plugin 'w0rp/ale'
 Plugin 'Buffergator'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/Solarized'
 Plugin 'dracula/vim'
+Plugin 'vim-scripts/Solarized'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'SirVer/ultisnips'
@@ -44,13 +44,16 @@ Plugin 'xolox/vim-notes'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'vimwiki/vimwiki'
 Plugin 'michal-h21/vim-zettel'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'tpope/vim-dadbod'
+Plugin 'kristijanhusak/vim-dadbod-ui'
 
 let g:python_host_prog = '/usr/local/bin/python2'
-let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme='dark'
 let g:jsx_ext_required = 0
-set t_Co=256
-set background=dark
+"set t_Co=256
+"set background=dark
 set nohlsearch
 set laststatus=2
 set relativenumber
@@ -62,13 +65,16 @@ set cursorcolumn
 set textwidth=80
 let &colorcolumn="80,".join(range(120,999),",")
 set nosmarttab
-colorscheme solarized
+colorscheme dracula
+let g:dracula_colorterm = 0
+set list listchars=eol:⏎,tab:»·.,trail:~,space:_
+set exrc
 
 imap <M-BS> <C-w>
 noremap <C-h> :bp<CR>
 noremap <C-l> :bn<CR>
-noremap <C-p> :FZF<CR>
-let g:solarized_termcolors=16
+noremap <C-p> :Files<CR>
+"let g:solarized_termcolors=16
 let mapleader = "\<Space>"
 let g:autoswap_detect_tmux = 1
 nnoremap <Leader>n :tabedit<CR>
@@ -114,10 +120,27 @@ nnoremap <leader>r :!ruby %<cr>
 "Ctags Toggle
 
 nnoremap <Leader>] :TagbarToggle<CR>
-nnoremap <Leader>d :Dash<CR>
 
 " Now we can turn our filetype functionality back on
-syntax on
 filetype plugin indent on
+syntax on
 let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_set_highlights = 0
 let g:notes_directories = ['~/Documents/Notes']
+let g:reach_db_stage = 'postgres://nfinitereach2:iYaX45M3JtDtCjDdutS81HspoC@localhost/reach2'
+let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+hi VimwikiHeader1 cterm=bold ctermfg=220
+hi VimwikiLink cterm=underline,italic ctermfg=cyan
+hi VimwikiList ctermfg=5
+
+" Spell checking wiki files
+autocmd BufRead,BufNewFile *.wiki setlocal spell
+" Title and date for new wiki files
+autocmd BufNewFile *.wiki :r! echo \%title %:t:r'\n'\%date $(date "+\%Y-\%m-\%d \%H:\%M:\%S")
+let g:vimwiki_listsyms = '✗○◐●✓'
+let wiki = {}
+"let wiki.path = '~/Library/Mobile\ Documents/com\~apple\~CloudDocs/vimwiki/'
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'ruby': 'ruby'}
+let g:vimwiki_list = [wiki]
+let g:zettel_format = "%title"
